@@ -1,0 +1,38 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="getWeekRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getWeekResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="week" type="tns:week"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="week">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="weeks" type="tns:weeks"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="weeks">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MONDAY"/>
+            <xs:enumeration value="TUESDAY"/>
+            <xs:enumeration value="WEDNESDAY"/>
+            <xs:enumeration value="TURSDAY"/>
+            <xs:enumeration value="FRIDAY"/>
+            <xs:enumeration value="SATURDAY"/>
+            <xs:enumeration value="SUNDAY"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
