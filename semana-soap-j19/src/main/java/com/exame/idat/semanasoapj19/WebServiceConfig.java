@@ -20,14 +20,14 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
 		servlet.setApplicationContext(applicationContext);
 		servlet.setTransformWsdlLocations(true);
-		return new ServletRegistrationBean<>(servlet, "/ws/*");
+		return new ServletRegistrationBean<>(servlet, "/wsec1e1/*");
 	}
 
 	@Bean(name = "semana")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema semanaSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("semanaPort");
-		wsdl11Definition.setLocationUri("/ws");
+		wsdl11Definition.setLocationUri("/wsec1e1");
 		wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
 		wsdl11Definition.setSchema(semanaSchema);
 		return wsdl11Definition;
